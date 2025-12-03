@@ -25,6 +25,14 @@ public class Main {
             return;
 
         }
+        // validate if ship is either horizontal or vertical
+        try {
+            Ship.validateShipPlacement(front, back);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
         Ship ship = new Ship(front, back);
         System.out.println(ship);
     }

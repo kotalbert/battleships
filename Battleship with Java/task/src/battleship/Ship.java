@@ -17,6 +17,14 @@ public class Ship {
         }
     }
 
+    public static void validateShipPlacement(String f, String b){
+        Field front = new Field(f);
+        Field back = new Field(b);
+        if (front.row != back.row && front.column != back.column) {
+            throw new IllegalArgumentException("Error! Wrong ship location! Try again:");
+        }
+    }
+
     /**
      * Get the coordinates occupied by the ship
      *
