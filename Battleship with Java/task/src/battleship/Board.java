@@ -1,31 +1,40 @@
 package battleship;
 
 public class Board {
-    private final char[][] grid;
     private final int size;
+    private final Field[][] grid;
 
     public Board(int size) {
         this.size = size;
-        this.grid = new char[size][size];
+        grid = new Field[size][size];
+        // Initialize the grid with Field objects
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                grid[i][j] = '~';
+                grid[i][j] = new Field(i, j);
             }
         }
     }
 
     public void printBoard() {
+        // Print column numbers
         System.out.print("  ");
-        for (int i = 1; i <= size; i++) {
-            System.out.print(i + " ");
+        for (int col = 1; col <= size; col++) {
+            System.out.print(col + " ");
         }
         System.out.println();
+
+        // Print rows with row letters
         for (int i = 0; i < size; i++) {
+            // Print row letter (A-J)
             System.out.print((char) ('A' + i) + " ");
+
+            // Print row content
             for (int j = 0; j < size; j++) {
                 System.out.print(grid[i][j] + " ");
             }
             System.out.println();
         }
     }
+
+
 }
