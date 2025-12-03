@@ -4,10 +4,10 @@ package battleship;
  * Class representing single tile of the game field.
  */
 public class Field {
-    private final String coordinate;
-    private final int row;
-    private final int column;
-    private char status;
+    protected final String coordinate;
+    protected final int row;
+    protected final int column;
+    protected char status;
 
     public Field(String coordinate)
     {

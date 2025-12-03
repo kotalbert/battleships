@@ -36,5 +36,11 @@ public class Board {
         }
     }
 
+    public void validateCoordinates(String coord) {
+        Field field = new Field(coord);
+        if (field.row < 0 || field.row >= size || field.column < 0 || field.column >= size) {
+            throw new IllegalArgumentException("Coordinates out of bounds: " + coord);
+        }
+    }
 
 }
